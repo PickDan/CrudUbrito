@@ -23,13 +23,13 @@ public class Curso implements Serializable {
     private String descripcion;
 
     @ManyToOne
-    @JoinColumn(name = "fkAula") // Corregido
-    private Aula aula; // Corregido
+    @JoinColumn(name = "fkAula")
+    private Aula aula;
 
-    @OneToMany(mappedBy = "curso") // Corregido
+    @OneToMany(mappedBy = "curso")
     private List<Matricula> matriculas = new ArrayList<>();
 
-    @ManyToOne // Corregido a ManyToOne
+    @ManyToOne
     @JoinColumn(name = "fkProfesorI")
     private Profesor fkImparte;
 }

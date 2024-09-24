@@ -1,31 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>CRUD App</title>
+    <title th:text="${title}">Unidad Educativa</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #e9ecef;
+            font-family: Arial, sans-serif;
         }
         .navbar {
             margin-bottom: 20px;
+            background-color: #007bff;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #ffd700 !important;
         }
         .card {
             transition: transform 0.2s;
+            background-color: #ffffff;
+            border: 1px solid #007bff;
         }
         .card:hover {
             transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         h1 {
             color: #343a40;
+        }
+        .card-title {
+            color: #007bff;
         }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">CRUD App</a>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">Unidad Educativa Fiscomisional "Danilo Brito Aguilar"</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -51,50 +65,50 @@
 </nav>
 
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Unidad educativa/h1>
+    <h1 class="text-center mb-4" th:text="${title}">Unidad Educativa Fiscomisional "Danilo Brito Aguilar"</h1>
     <div class="row">
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
                     <h5 class="card-title">Aulas</h5>
-                    <p class="card-text">Descripción breve de la Entidad 1.</p>
-                    <a href="listar_aula.html" class="btn btn-primary">Ir a las aulas</a>
+                    <p class="card-text">Gestione las aulas disponibles en la unidad educativa, incluyendo su capacidad y nombre.</p>
+                    <a th:href="@{/aulas}" class="btn btn-primary">Ir a las aulas</a>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">Entidad 2</h5>
-                    <p class="card-text">Descripción breve de la Entidad 2.</p>
-                    <a href="listar_curso.html" class="btn btn-primary">Ir a Entidad 2</a>
+                    <h5 class="card-title">Cursos</h5>
+                    <p class="card-text">Administre los cursos ofrecidos, así como su contenido.</p>
+                    <a th:href="@{/cursos}" class="btn btn-primary">Ir a los cursos</a>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">Entidad 3</h5>
-                    <p class="card-text">Descripción breve de la Entidad 3.</p>
-                    <a href="entidad3.html" class="btn btn-primary">Ir a Entidad 3</a>
+                    <h5 class="card-title">Estudiantes</h5>
+                    <p class="card-text">Maneje la información de los estudiantes, incluyendo su matrícula y datos adicionales.</p>
+                    <a th:href="@{/estudiantes}" class="btn btn-primary">Ir a los estudiantes</a>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">Entidad 4</h5>
-                    <p class="card-text">Descripción breve de la Entidad 4.</p>
-                    <a href="entidad4.html" class="btn btn-primary">Ir a Entidad 4</a>
+                    <h5 class="card-title">Matriculas</h5>
+                    <p class="card-text">Registre y controle las matrículas de los estudiantes en los diferentes cursos.</p>
+                    <a th:href="@{/matriculas}" class="btn btn-primary">Ir a las matriculas</a>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">Entidad 5</h5>
-                    <p class="card-text">Descripción breve de la Entidad 5.</p>
-                    <a href="entidad5.html" class="btn btn-primary">Ir a Entidad 5</a>
+                    <h5 class="card-title">Profesores</h5>
+                    <p class="card-text">Gestione la información de los profesores, incluyendo su especialización.</p>
+                    <a th:href="@{/profesores}" class="btn btn-primary">Ir a los profesores</a>
                 </div>
             </div>
         </div>

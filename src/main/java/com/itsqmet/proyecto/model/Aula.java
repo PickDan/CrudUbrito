@@ -25,6 +25,4 @@ public class Aula implements Serializable {
 
     @OneToMany(mappedBy = "aula")
     private List<Curso> cursos = new ArrayList<>();
-
-
 }

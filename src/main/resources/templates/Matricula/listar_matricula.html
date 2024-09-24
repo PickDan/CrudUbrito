@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Listado de Aulas</title>
+    <title>Listado de Matriculas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <style>
         body {
             background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
         }
-        .nav-tabs {
-            margin-bottom: 20px;
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar-brand {
+            color: white !important;
         }
         h1 {
             color: #343a40;
@@ -29,24 +33,24 @@
 </head>
 <body>
 
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">ESTUDIANTES</a>
+<nav class="navbar navbar-light">
+    <a class="navbar-brand" href="#">Matriculas</a>
 </nav>
 
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="index.html">Home</a>
+        <a class="nav-link active" href="index.html">Inicio</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" th:href="@{/cursos}">Listado Estudiantes</a>
+        <a class="nav-link" th:href="@{/matriculas}">Listado de Matrículas</a>
     </li>
 </ul>
 
 <div class="container">
-    <h1 class="text-center">Lista de Estudiantes</h1>
+    <h1 class="text-center">Lista de Matriculas</h1>
 
     <div class="text-right">
-        <a th:href="@{/estudiantes/nuevo}" class="btn btn-primary btn-add-course">Agregar Estudiante</a>
+        <a th:href="@{/matriculas/nuevo}" class="btn btn-primary btn-add-course">Agregar Matricula</a>
     </div>
 
     <div class="table-responsive">
@@ -54,19 +58,19 @@
             <thead class="table-dark">
             <tr>
                 <th>ID</th>
-                <th>Fecha matricula</th>
-                <th>Nombre estudiante</th>
+                <th>Fecha de Matrícula</th>
+                <th>Nombre del Estudiante</th>
+                <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="matricula : ${matriculas}">
                 <td th:text="${matricula.id}">ID</td>
-                <td th:text="${matricula.fecha_matricula}">Nombre</td>
-                <td th:text="${matricula.estudiante}">Apellido</td>
-
+                <td th:text="${matricula.fecha_matricula}">Fecha</td>
+                <td th:text="${matricula.estudiante}">Estudiante</td>
                 <td>
                     <a th:href="@{/matriculas/editar/{id}(id=${matricula.id})}" class="btn btn-warning">Editar</a>
-                    <a th:href="@{/matriculas/{id}(id=${matricula.id})}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar esta aula?');">Eliminar</a>
+                    <a th:href="@{/matriculas/{id}(id=${matricula.id})}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar esta matrícula?');">Eliminar</a>
                 </td>
             </tr>
             </tbody>

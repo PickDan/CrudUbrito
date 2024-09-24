@@ -20,9 +20,9 @@ public class Matricula implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "fkMatEstu")
-    private Estudiante estudiante; // Corregido
+    private Estudiante estudiante;
 
-    @ManyToOne // Agregado para relacionar con Curso
+    @ManyToOne
     @JoinColumn(name = "fkCurso")
-    private Curso curso; // Corregido
+    private Curso curso;
 }

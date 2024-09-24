@@ -27,6 +27,6 @@ public class Estudiante implements Serializable {
     private String correo;
 
 
-    @OneToMany(mappedBy = "estudiante") // Corregido
+    @OneToMany(mappedBy = "estudiante")
     private List<Matricula> listaMatricula = new ArrayList<>();
 }

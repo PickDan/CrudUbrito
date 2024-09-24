@@ -20,7 +20,7 @@ public class CursoController {
     @GetMapping("/cursos")
     public String listarLosCursos(Model model){
         model.addAttribute("cursos", cursoService.mostrarCursos());
-        return "/Cursos/listar_curso";
+        return "/Curso/listar_curso";
     }
 
     @GetMapping("/curso/nuevo")

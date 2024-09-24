@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Edición de Aula</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <title>Edición de Matrícula</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
         }
-        .nav-tabs {
-            margin-bottom: 20px;
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar-brand {
+            color: white !important;
+        }
+        h1 {
+            color: #343a40;
         }
         .card {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -18,9 +25,6 @@
         .card:hover {
             transform: translateY(-2px);
         }
-        h1 {
-            color: #343a40;
-        }
         .btn-success {
             width: 100%;
         }
@@ -28,29 +32,29 @@
 </head>
 <body>
 
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">Edición de matricula</a>
+<nav class="navbar navbar-light">
+    <a class="navbar-brand" href="#">Edición de Matrícula</a>
 </nav>
 
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link " data-toggle="tab" href="index.html">Inicio</a>
+        <a class="nav-link" data-toggle="tab" href="index.html">Inicio</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" th:href="@{/matriculas}">Listado Matricula</a>
+        <a class="nav-link active" th:href="@{/matriculas}">Listado de Matrículas</a>
     </li>
 </ul>
 
 <div class="container">
-    <h1 class="text-center mb-4">Edición de Matricula</h1>
+    <h1 class="text-center mb-4">Edición de Matrícula</h1>
     <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8 col-sm-10">
             <div class="card">
                 <div class="card-body">
                     <form th:action="@{/matriculas/{id}(id=${matricula.id})}" th:object="${matricula}" method="POST">
                         <div class="form-group">
-                            <label>Fecha de matricula:</label>
-                            <input type="text" id="fecha_matricula" name="fecha_matricula" th:field="*{fecha_matricula}" class="form-control" placeholder="Modificar la fecha de matricula" required>
+                            <label>Fecha de matrícula:</label>
+                            <input type="text" id="fecha_matricula" name="fecha_matricula" th:field="*{fecha_matricula}" class="form-control" required>
                         </div>
 
                         <div class="form-group">
@@ -70,7 +74,7 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
