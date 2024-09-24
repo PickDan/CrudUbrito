@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .card {
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            color: #343a40;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CRUD App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/aulas}">Aulas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/estudiantes}">Estudiantes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/cursos}">Cursos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/matriculas}">Matriculas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/profesores}">Profesores</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Unidad educativa/h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Aulas</h5>
+                    <p class="card-text">Descripción breve de la Entidad 1.</p>
+                    <a href="listar_aula.html" class="btn btn-primary">Ir a las aulas</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Entidad 2</h5>
+                    <p class="card-text">Descripción breve de la Entidad 2.</p>
+                    <a href="listar_curso.html" class="btn btn-primary">Ir a Entidad 2</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Entidad 3</h5>
+                    <p class="card-text">Descripción breve de la Entidad 3.</p>
+                    <a href="entidad3.html" class="btn btn-primary">Ir a Entidad 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Entidad 4</h5>
+                    <p class="card-text">Descripción breve de la Entidad 4.</p>
+                    <a href="entidad4.html" class="btn btn-primary">Ir a Entidad 4</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Entidad 5</h5>
+                    <p class="card-text">Descripción breve de la Entidad 5.</p>
+                    <a href="entidad5.html" class="btn btn-primary">Ir a Entidad 5</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
